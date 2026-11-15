@@ -21,11 +21,9 @@ export type Photo = {
 
 export type IconName =
   | "camera"
-  | "book"
-  | "chef"
   | "bike"
-  | "music"
   | "map"
+  | "gardening"
   | "mail"
   | "linkedin"
   | "github"
@@ -176,11 +174,9 @@ export const profile = {
   interests: {
     hobbies: [
       { icon: "camera", title: "Photography", text: "Street and film photography on weekend walks." },
-      { icon: "book", title: "Reading", text: "Literary fiction, essays and the odd design book." },
-      { icon: "chef", title: "Cooking", text: "Recreating my grandmother's recipes from memory." },
       { icon: "bike", title: "Cycling", text: "Early-morning rides before the city wakes up." },
-      { icon: "music", title: "Music", text: "Learning the harmonium, slowly." },
       { icon: "map", title: "Travel", text: "Small towns over big cities, by train when I can." },
+      { icon: "gardening", title: "Gardening", text: "Growing herbs and caring for plants at home." },
     ] satisfies { icon: IconName; title: string; text: string }[],
     values: [
       { title: "Curiosity", text: "Ask the question, even when it sounds obvious." },

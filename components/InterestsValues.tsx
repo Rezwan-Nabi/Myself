@@ -2,6 +2,7 @@ import Section from "./Section";
 import Reveal from "./Reveal";
 import Icon from "./Icon";
 import { profile } from "@/data/profile";
+import Link from "next/link";
 
 export default function InterestsValues() {
   const { hobbies, values, lifestyle } = profile.interests;
@@ -22,14 +23,32 @@ export default function InterestsValues() {
             delay={(i % 3) * 0.06}
             className="group border-b border-r border-line p-5 transition-colors duration-300 hover:bg-wash md:p-7"
           >
-            <Icon
-              name={hobby.icon}
-              className="size-6 transition-transform duration-300 group-hover:-translate-y-0.5"
-            />
-            <p className="mt-8 font-serif text-xl">{hobby.title}</p>
-            <p className="mt-1.5 text-sm leading-relaxed text-muted">
-              {hobby.text}
-            </p>
+            {["Photography", "Travel", "Gardening"].includes(hobby.title) ? (
+              <Link
+                href={`/${hobby.title.toLowerCase()}`}
+                className="block focus-visible:outline-offset-4"
+              >
+                <Icon
+                  name={hobby.icon}
+                  className="size-6 transition-transform duration-300 group-hover:-translate-y-0.5"
+                />
+                <p className="mt-8 font-serif text-xl">{hobby.title}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                  {hobby.text}
+                </p>
+              </Link>
+            ) : (
+              <>
+                <Icon
+                  name={hobby.icon}
+                  className="size-6 transition-transform duration-300 group-hover:-translate-y-0.5"
+                />
+                <p className="mt-8 font-serif text-xl">{hobby.title}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                  {hobby.text}
+                </p>
+              </>
+            )}
           </Reveal>
         ))}
       </ul>

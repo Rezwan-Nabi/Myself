@@ -1,15 +1,13 @@
 import {
   Bike,
-  BookOpen,
   Briefcase,
   Camera,
-  ChefHat,
   Code,
   Globe,
   Mail,
   Map,
   MapPin,
-  Music,
+  Sprout,
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/data/profile";
@@ -17,11 +15,9 @@ import type { IconName } from "@/data/profile";
 // Lucide has dropped most brand logos, so social links use neutral icons.
 const icons: Record<IconName, LucideIcon> = {
   camera: Camera,
-  book: BookOpen,
-  chef: ChefHat,
   bike: Bike,
-  music: Music,
   map: Map,
+  gardening: Sprout,
   mail: Mail,
   linkedin: Briefcase,
   github: Code,
